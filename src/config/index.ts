@@ -16,3 +16,5 @@ export const postgreSQL: PostgreSQL = {
     port: Number(POSTGRE_SQL_PORT) || 5432,
     dataBaseName: POSTGRE_SQL_NAME || 'urban_smart'
 }
+
+export const uriPostgreSQL: string = `postgres://${postgreSQL.user}:${postgreSQL.password}@${postgreSQL.host}:${postgreSQL.port}/${postgreSQL.dataBaseName}`

@@ -1,9 +1,9 @@
 import express from 'express';
 import { Sequelize } from 'sequelize';
-import { server, postgreSQL } from './config';
+import { server, postgreSQL, uriPostgreSQL } from './config';
 
 const app = express();
-const sequelize = new Sequelize(`postgres://${postgreSQL.user}:${postgreSQL.password}@${postgreSQL.host}:${postgreSQL.port}/${postgreSQL.dataBaseName}`);
+const sequelize = new Sequelize(uriPostgreSQL);
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
